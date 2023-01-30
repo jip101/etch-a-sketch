@@ -1,0 +1,13 @@
+.container {
+    display: grid;
+    width: 600px;
+    height: 600px;
+    grid-template-columns: repeat(64, minmax(0, 1fr));
+    gap: 0;
+    margin: auto;
+}
+
+div {
+    background-color: lightgray;
+    border: 1px solid black;
+}
