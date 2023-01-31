@@ -7,7 +7,7 @@
     margin: auto;
 }
 
-div {
+.box {
     background-color: lightgray;
     border: 1px solid black;
 }

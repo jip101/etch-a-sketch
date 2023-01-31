@@ -8,18 +8,24 @@ for (i=1; i<=4096; i++) {
     container.appendChild(div);
 }
 
-pickColor = () => document.querySelector('.color').value
+pickColor = () => document.querySelector('#colorWheel').value;
 
-/*
-colorSelector = document.querySelectorAll('.color')
-colorSelector.forEach(element => {
-    element.addEventListener('click', (e) => {
-        colorSelector.forEach(i => {
-            if(!e) {
-                i.id=''
-            }
-            e.id='selected'
+
+let buttons = document.querySelectorAll('.selector')
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        let boxClass = document.querySelectorAll('.box');
+        boxClass.forEach(box => {
+            box.addEventListener('mouseover', ()=> {
+                box.style.backgroundColor = button.value;
+            })
         })
     })
-});
-*/
+})
+
+
+document.querySelector('#clear').addEventListener('click', () => {
+    let boxes = document.querySelectorAll('.box')
+    boxes.forEach(box => box.style.backgroundColor = 'lightgray')
+})
+
