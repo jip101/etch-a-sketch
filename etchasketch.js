@@ -34,7 +34,13 @@ function pickColor () {
 let buttons = document.querySelectorAll('.selector')
 buttons.forEach(button => {
     button.addEventListener('click', () => {
+        buttons.forEach(button => {
+            button.style.backgroundColor = ''
+        })
         selected = button;
+        if (selected === button) {
+            button.style.backgroundColor = 'yellow'
+        }
     })
 })
 
@@ -45,13 +51,16 @@ document.querySelector('#clear').addEventListener('click', () => {
 
 
 let grid = document.querySelector('#grid')
+grid.style.backgroundColor = 'yellow'
 grid.addEventListener('click', () => {
     boxes.forEach(box => {
         if (grid.value == 'on') {
             box.style.border='none'
+            grid.style.backgroundColor = ''
         }
         else {
         box.style.border='1px solid black'
+        grid.style.backgroundColor = 'yellow'
         }
     })
     if (grid.value == 'on'){
@@ -62,11 +71,9 @@ grid.addEventListener('click', () => {
     }})
 
 
-
-function randomNumber() {
-    return (Math.floor(Math.random()*256))
-}
-
+//generate and return rgb value (format = `rgb(r, g, b)`)
 function randomRGB() {
-    return `rgb(${randomNumber()}, ${randomNumber()}, ${randomNumber()})`
+    return `rgb(${Math.floor(Math.random()*256)}, 
+    ${Math.floor(Math.random()*256)}, 
+    ${Math.floor(Math.random()*256)})`
 }
