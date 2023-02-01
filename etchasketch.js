@@ -1,31 +1,51 @@
 let container = document.querySelector('.container');
-for (i=1; i<=4096; i++) {
+let selected = document.querySelector('#colorWheel');
+
+for (i=1; i<=100; i++) {
     let div = document.createElement("div");
     div.classList.add('box');
+    div.setAttribute('class', 'box')
     div.addEventListener('mouseover', () => {
         div.style.backgroundColor = pickColor()
     })
     container.appendChild(div);
 }
 
-pickColor = () => document.querySelector('#colorWheel').value;
+let defaultBackground = document.querySelector('.box').style.backgroundColor;
 
+pickColor = () => selected.value;
 
 let buttons = document.querySelectorAll('.selector')
 buttons.forEach(button => {
     button.addEventListener('click', () => {
-        let boxClass = document.querySelectorAll('.box');
-        boxClass.forEach(box => {
-            box.addEventListener('mouseover', ()=> {
-                box.style.backgroundColor = button.value;
-            })
-        })
+        selected = button;
     })
 })
 
 
+
+
 document.querySelector('#clear').addEventListener('click', () => {
     let boxes = document.querySelectorAll('.box')
-    boxes.forEach(box => box.style.backgroundColor = 'lightgray')
+    boxes.forEach(box => box.style.backgroundColor = defaultBackground)
+    
 })
 
+let boxes = document.querySelectorAll('.box')
+let grid = document.querySelector('#grid')
+console.log(boxes)
+grid.addEventListener('click', () => {
+    boxes.forEach(box => {
+        if (grid.value == 'on') {
+            box.style.border='hidden'
+        }
+        else {
+        box.style.border='1px solid black'
+        }
+    })
+    if (grid.value == 'on'){
+        grid.value = 'off'
+    }
+    else {
+        grid.value = 'on'
+    }})
