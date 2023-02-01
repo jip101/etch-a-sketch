@@ -1,12 +1,13 @@
 let container = document.querySelector('.container');
 let selected = document.querySelector('#colorWheel');
+document.querySelector('input').style.backgroundColor = 'yellow'
 
 let gridSize = document.querySelector('.container')
-let columns = prompt('Enter size of grid')
-gridSize.style.gridTemplateColumns = `repeat(${columns}, minmax(0, 1fr))`
+let width = prompt('Enter size of grid')
+gridSize.style.gridTemplateColumns = `repeat(${width}, minmax(0, 1fr))`
 
 
-for (i=1; i<=columns**2; i++) {
+for (i=1; i<=width**2; i++) {
     div = document.createElement("div");
     div.classList.add('box');
     div.setAttribute('class', 'box')
@@ -35,7 +36,7 @@ let buttons = document.querySelectorAll('.selector')
 buttons.forEach(button => {
     button.addEventListener('click', () => {
         buttons.forEach(button => {
-            button.style.backgroundColor = ''
+            button.style.backgroundColor = '';
         })
         selected = button;
         if (selected === button) {
