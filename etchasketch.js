@@ -1,7 +1,7 @@
 let container = document.querySelector('.container');
 let selected = document.querySelector('#colorWheel');
 
-for (i=1; i<=100; i++) {
+for (i=1; i<=4096; i++) {
     let div = document.createElement("div");
     div.classList.add('box');
     div.setAttribute('class', 'box')
@@ -11,8 +11,8 @@ for (i=1; i<=100; i++) {
     container.appendChild(div);
 }
 
+let boxes = document.querySelectorAll('.box')
 let defaultBackground = document.querySelector('.box').style.backgroundColor;
-
 pickColor = () => selected.value;
 
 let buttons = document.querySelectorAll('.selector')
@@ -23,15 +23,12 @@ buttons.forEach(button => {
 })
 
 
-
-
 document.querySelector('#clear').addEventListener('click', () => {
-    let boxes = document.querySelectorAll('.box')
     boxes.forEach(box => box.style.backgroundColor = defaultBackground)
     
 })
 
-let boxes = document.querySelectorAll('.box')
+
 let grid = document.querySelector('#grid')
 console.log(boxes)
 grid.addEventListener('click', () => {
