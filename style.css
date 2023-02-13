@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap');
+
+body {
+    background-color: aliceblue;
+}
+
 .container {
     display: grid;
     width: 600px;
@@ -11,4 +17,47 @@
 .box {
     background-color: lightgray;
     border: 1px solid black;
+}
+
+#gridSelector {
+    display: flex;
+    flex-direction: column;
+}
+
+#gridSelector > * {
+    align-self: center;
+}
+
+
+#options {
+display: flex; 
+flex-direction:row;
+flex:0 0 auto; 
+justify-content: center;
+align-items: center;
+border-radius: 50%;
+}
+
+#display {
+    background-color: red;
+    border: 2px solid black;
+    padding: 100px 5px 10px 5px;
+    border-radius: 12%;
+    box-shadow: 10px 5px 5px black;
+    width: 900px;
+    margin: auto;
+}
+
+#title {
+    text-align: center;
+    color: goldenrod;
+    font-family: 'Mr Dafoe', cursive;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    margin: 12px 0;
+}
+
+#color {
+    text-align: center;
 }
